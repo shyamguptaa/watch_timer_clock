@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 function Timer() {
   let day = 1
   let hrs = 1
-  let min = 60
+  let min = 90
   let sec = 60
   // let mili = 1000
   // const duration = day * hrs * min * sec * mili;
@@ -34,26 +34,26 @@ function Timer() {
     // return `${total_days}:${hours}:${minutes}:${seconds}`
 
     var t_day = () => {
-      return total_days > 0 ? <>{total_days}<small className='fs-6 lead'>D</small>: </> : ""
+      return total_days > 0 ? <>{total_days}<span className='fs-3 lead'>D</span>: </> : ""
     }
     var t_hrs = () => {
       if (total_days > 0) {
-        return <>{hours}<small className='fs-6 lead'>H</small>: </>
+        return <>{hours}<span className='fs-3 lead'>H</span>: </>
       }
       else {
-        return hours > 0 ? <>{hours}<small className='fs-6 lead'>H</small>: </> : ""
+        return hours > 0 ? <>{hours}<span className='fs-3 lead'>H</span>: </> : ""
       }
     }
     var t_mins = () => {
       if (hours > 0 || total_days > 0) {
-        return <>{minutes}<small className='fs-6 lead'>M</small>: </>
+        return <>{minutes}<span className='fs-3 lead'>M</span>: </>
       }
       else {
-        return minutes > 0 ? <>{minutes}<small className='fs-6 lead'>M</small>: </> : ""
+        return minutes > 0 ? <>{minutes}<span className='fs-3 lead'>M</span>: </> : ""
       }
     }
     var t_sec = () => {
-      return <>{seconds}<small className='fs-6 lead'>s</small></>
+      return <>{seconds}<span className='fs-3 lead'>s</span></>
     }
     return (
       <>{t_day()}{t_hrs()}{t_mins()}{t_sec()}</>
