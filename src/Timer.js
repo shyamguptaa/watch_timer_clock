@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 function Timer() {
   let day = 1
   let hrs = 1
-  let min = 1
-  let sec = 5
+  let min = 60
+  let sec = 60
   // let mili = 1000
   // const duration = day * hrs * min * sec * mili;
-  const duration = day* hrs * min * sec ;
+  const duration = day * hrs * min * sec;
   const [time, setTime] = useState(duration);
 
   useEffect(() => {
@@ -19,19 +19,46 @@ function Timer() {
 
   const getFormatedTime = (time) => {
     // let total_sec = parseInt(Math.floor(time / mili));
-    let total_sec = parseInt(Math.floor(time ));
+    let total_sec = parseInt(Math.floor(time));
     let total_min = parseInt(Math.floor(total_sec / 60))
     let total_hrs = parseInt(Math.floor(total_min / 60))
     let total_days = parseInt(Math.floor(total_hrs / 24))
 
-    let seconds = parseInt(total_sec % 60)
-    let minutes = parseInt(total_min % 60)
-    let hours = parseInt(total_hrs % 24)
-    seconds=seconds.toString().length===1? `0${seconds}`:seconds;
-    minutes=minutes.toString().length===1? `0${minutes}`:minutes;
-    hours=hours.toString().length===1? `0${hours}`:hours;
-    total_days=total_days.toString().length===1? `0${total_days}`:hours;
-    return `${total_days}:${hours}:${minutes}:${seconds}`
+    var seconds = parseInt(total_sec % 60)
+    var minutes = parseInt(total_min % 60)
+    var hours = parseInt(total_hrs % 24)
+    seconds = seconds.toString().length === 1 ? `0${seconds}` : seconds;
+    minutes = minutes.toString().length === 1 ? `0${minutes}` : minutes;
+    hours = hours.toString().length === 1 ? `0${hours}` : hours;
+    total_days = total_days.toString().length === 1 ? `0${total_days}` : hours;
+    // return `${total_days}:${hours}:${minutes}:${seconds}`
+
+    var t_day = () => {
+      return total_days > 0 ? <>{total_days}<small className='fs-6 lead'>D</small>: </> : ""
+    }
+    var t_hrs = () => {
+      if (total_days > 0) {
+        return <>{hours}<small className='fs-6 lead'>H</small>: </>
+      }
+      else {
+        return hours > 0 ? <>{hours}<small className='fs-6 lead'>H</small>: </> : ""
+      }
+    }
+    var t_mins = () => {
+      if (hours > 0 || total_days > 0) {
+        return <>{minutes}<small className='fs-6 lead'>M</small>: </>
+      }
+      else {
+        return minutes > 0 ? <>{minutes}<small className='fs-6 lead'>M</small>: </> : ""
+      }
+    }
+    var t_sec = () => {
+      return <>{seconds}<small className='fs-6 lead'>s</small></>
+    }
+    return (
+      <>{t_day()}{t_hrs()}{t_mins()}{t_sec()}</>
+      // <>{test()}  {total_days}<small className='fs-6 lead'>D</small>: {hours}<small className='fs-6 lead'>H</small>: {minutes}<small className='fs-6 lead'>M</small>: {seconds}<small className='fs-6 lead'>s</small></>
+    )
   }
   return (
     <>
