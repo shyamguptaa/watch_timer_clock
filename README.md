@@ -1,4 +1,9 @@
 
+## HomePage
+![alt text](https://github.com/shyamguptaa/watch_timer_clock/blob//main/public/HomePage.png?raw=true)
+## Timer Page
+![alt text](https://github.com/shyamguptaa/watch_timer_clock/blob//main/public/TimerScreen.png?raw=true)
+
 ## Available Scripts
 
 ### `npm start`

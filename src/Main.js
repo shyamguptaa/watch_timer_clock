@@ -14,7 +14,7 @@ function Main() {
     return (
       <>
       {/* <div className='display-5 mt-3 text-center'> ⏱️ Focus | 🧐 Concentrate <span  className='fs-6'>By Shyam</span></div> */}
-      <div className='display-5 mt-3 text-center mb-3'> ⏱️ Focus | 🧐 Concentrate </div>
+      <div className='display-5 mt-3 text-center mb-3'> ⏱️ Focus | 🧐 Concentrate <span className='fs-5'>Shyam</span></div>
       <div className='text-center text-decoration-underline fs-3 mb-3'>
         Select the Timer
       </div>
