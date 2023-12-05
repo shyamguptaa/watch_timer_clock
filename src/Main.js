@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { timerdata } from './constant'
+import Timer from './Timer'
 
 function Main() {
+  const [displayTimerPage,setDisplayTimerPage]=useState(0)
+  const [onclickTimer,setOnClickTimer]=useState(null)
 
-  // function
-
-  return (
-    <>
+  const handleClick=(item)=>{
+    setDisplayTimerPage(1)
+    setOnClickTimer(item)
+  }
+  const Initialdisplay=()=>{
+    return (
+      <>
       {/* <div className='display-5 mt-3 text-center'> ⏱️ Focus | 🧐 Concentrate <span  className='fs-6'>By Shyam</span></div> */}
       <div className='display-5 mt-3 text-center mb-3'> ⏱️ Focus | 🧐 Concentrate </div>
       <div className='text-center text-decoration-underline fs-3 mb-3'>
@@ -27,8 +33,9 @@ function Main() {
 
           {timerdata && timerdata.map((item) =>
             <div key={item.id} className="col-md-6 col-lg-3 col-sm-6 item">
-              <button key={item.id} type="button" className="btn  btn-lg btn-block" onClick={(item) => "console.log(item)"}>
+              <button key={item.id} type="button" className="btn  btn-lg btn-block" onClick={() => handleClick(item)}>
                 <div className="card item-card card-block m-2 p-3">
+                {item.Rating!==""?<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-2">{item.Rating}</span>:null}
                   {/* <h6 className="lead text-right">{item?.Rating}</h6> */}
                   <h5 className="item-card-title mt-3 mb-3 display-6 text-wrap">{item.title.replaceAll("-", ":")} </h5>
                   <p className="card-text fs-6 text-wrap">{item.description}</p>
@@ -40,7 +47,14 @@ function Main() {
       </div>
 
     </>
-  )
+    )
+  }
+  if(displayTimerPage===1){
+    return <Timer data={onclickTimer} goback={setDisplayTimerPage}/>
+  }
+  else{
+    return Initialdisplay()
+  }
 }
 
 export default Main

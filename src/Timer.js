@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react'
-function Timer() {
-  let day = 1
-  let hrs = 1
-  let min = 90
+function Timer(props) {
+  // console.log(props.goback(1))
+  let day = props.data.DD
+  let hrs = props.data.HH
+  let min = props.data.MM
   let sec = 60
+  // let day = 1
+  // let hrs = 1
+  // let min = 90
+  // let sec = 60
+
   // let mili = 1000
   // const duration = day * hrs * min * sec * mili;
   const duration = day * hrs * min * sec;
   const [time, setTime] = useState(duration);
 
   useEffect(() => {
-    setTimeout(() => {
+   const reduceTimer =setTimeout(() => {
       if (time > 0)
         // setTime(time - 1000)
         setTime(time - 1)
     }, 1000);
+    return () =>{
+      clearTimeout(reduceTimer);
+    };
   }, [time])
 
   const getFormatedTime = (time) => {
@@ -62,6 +71,10 @@ function Timer() {
   }
   return (
     <>
+      <div className='position-absolute top-0 start-50 translate-middle-x mt-4'>
+        <button className='btn btn-outline-primary mr-2' onClick={()=>props.goback(0)}>🏠 Go Back</button>
+        <button className='btn btn-secondary ' onClick={()=>setTime(duration)}>↻ Reset</button>
+      </div>
       <div className='d-flex flex-column min-vh-100 justify-content-center align-items-center'>
         <p className='display-1'>{getFormatedTime(time)}</p>
       </div>

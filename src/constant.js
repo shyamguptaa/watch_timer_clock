@@ -1,8 +1,8 @@
 export const timerdata=[
     {
-        "id": "1",
+        "id": "0",
         "title": "01-00",
-        "description": "01  Minutes Timer",
+        "description": "01 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
@@ -10,9 +10,19 @@ export const timerdata=[
         "SS": "60"
     },
     {
+        "id": "1",
+        "title": "02-00",
+        "description": "02 Minutes Timer",
+        "Rating": "",
+        "DD": "1",
+        "HH": "1",
+        "MM": "2",
+        "SS": "60"
+    },
+    {
         "id": "2",
         "title": "05-00",
-        "description": "05  Minutes Timer",
+        "description": "05 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
@@ -22,7 +32,7 @@ export const timerdata=[
     {
         "id": "3",
         "title": "10-00",
-        "description": "10  Minutes Timer",
+        "description": "10 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
@@ -32,7 +42,7 @@ export const timerdata=[
     {
         "id": "4",
         "title": "15-00",
-        "description": "15  Minutes Timer",
+        "description": "15 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
@@ -42,7 +52,7 @@ export const timerdata=[
     {
         "id": "5",
         "title": "20-00",
-        "description": "20  Minutes Timer",
+        "description": "20 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
@@ -52,7 +62,7 @@ export const timerdata=[
     {
         "id": "6",
         "title": "25-00",
-        "description": "25  Minutes Timer",
+        "description": "25 Minutes Timer",
         "Rating": "Best",
         "DD": "1",
         "HH": "1",
@@ -62,7 +72,7 @@ export const timerdata=[
     {
         "id": "7",
         "title": "30-00",
-        "description": "30  Minutes Timer",
+        "description": "30 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
@@ -72,7 +82,7 @@ export const timerdata=[
     {
         "id": "8",
         "title": "01-00-00",
-        "description": "60  Minutes Timer",
+        "description": "60 Minutes Timer",
         "Rating": "",
         "DD": "1",
         "HH": "1",
