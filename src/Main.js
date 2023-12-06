@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { timerdata } from './constant'
 import Timer from './Timer'
-import { Modal} from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 function Main() {
   const [displayTimerPage, setDisplayTimerPage] = useState(0)
@@ -9,8 +9,8 @@ function Main() {
   const [modalShow, setModalShow] = useState(false);
   const [Custom_TimerInput, setCustom_TimerInput] = useState({
     "DD": "1",
-    "HH": "1",
-    "MM": "1",
+    "HH": "24",
+    "MM": "60",
     "SS": "60",
   })
 
@@ -41,7 +41,8 @@ function Main() {
         </div>
         <div className='container mx-auto py-3'>
           <div className='row'>
-            <div className="col-md-6 col-lg-3 col-sm-6 item ">
+            {/* start */}
+            {/* <div className="col-md-6 col-lg-3 col-sm-6 item ">
               <button type="button" className="btn btn-lg btn-block" onClick={() => setModalShow(true)}>
                 <div className="card item-card card-block m-2 p-3">
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary p-2">custom</span>
@@ -77,7 +78,8 @@ function Main() {
                   </div>
                 </div>
               </Modal.Body>
-            </Modal>
+            </Modal> */}
+            {/* end */}
 
             {timerdata && timerdata.map((item) =>
               <div key={item.id} className="col-md-6 col-lg-3 col-sm-6 item">
